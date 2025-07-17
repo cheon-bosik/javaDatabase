@@ -1,0 +1,6 @@
+.settings/
+myImages/
+.classpath
+.project
+.gitignore
+src/t4_WindowBuilder/images/
