@@ -84,6 +84,13 @@ public class InsaMain {
 		
 // ------------------------위쪽은 디자인 , 아래쪽은 메소드------------------------------------------------------
 
+		// 전체조회 버튼을 마우스로 클릭시 수행
+		btnList.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				new InsaList();
+			}
+		});
 		
 		// 회원 개별 조회버튼을 마우스 클릭 실행
 		btnSearch.addActionListener(new ActionListener() {

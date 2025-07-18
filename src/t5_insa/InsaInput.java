@@ -1,21 +1,20 @@
 package t5_insa;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.regex.Pattern;
 
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JRadioButton;
-import javax.swing.JComboBox;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class InsaInput {
 	private InsaDAO dao = new InsaDAO();
@@ -131,8 +130,6 @@ public class InsaInput {
 			dd[i] = (i + 1) + "";
 		}
 		
-		
-		
 		JComboBox cbYY = new JComboBox(yy);
 		cbYY.setFont(new Font("굴림", Font.BOLD, 18));
 		cbYY.setBounds(294, 311, 106, 35);
@@ -183,6 +180,13 @@ public class InsaInput {
 		btnClose.setBounds(537, 10, 195, 63);
 		pn3.add(btnClose);
 	
+		// 오늘날짜를 가입화면의 날짜에 표시하기
+		InsaService service = new InsaService();
+		vo = service.getCurrentDate();
+		cbYY.setSelectedItem(vo.getCbYY());
+		cbMM.setSelectedItem(vo.getCbMM());
+		cbDD.setSelectedItem(vo.getCbDD());
+		
 		frame.setVisible(true);
 		
 	// ------------------------위쪽은 디자인 , 아래쪽은 메소드------------------------------------------------------
